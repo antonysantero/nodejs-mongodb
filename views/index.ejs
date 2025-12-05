@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Liste des utilisateurs</title>
+  <title>Utilisateurs</title>
 </head>
 <body>
-  <h1>Utilisateurs</h1>
+  <h1>Liste des utilisateurs</h1>
   <ul>
     <% users.forEach(user => { %>
-      <li><%= user.nom %> - <%= user.age %> ans</li>
+      <li><%= user.name %> - <%= user.age %> ans</li>
     <% }) %>
   </ul>
+
+  <h2>Ajouter un utilisateur</h2>
+  <form action="/add" method="POST">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="name" required>
+    <br>
+    <label for="age">Âge :</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <button type="submit">Ajouter</button>
+  </form>
 </body>
 </html>
